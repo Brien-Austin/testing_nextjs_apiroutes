@@ -10,9 +10,15 @@ const Index = () => {
     password : ""
   })
   const handleSubmit = async(e) => {
-    e.preventDefault(); try {
+     e.preventDefault();
+    try {
       const response = await axios.post("api/signup", formData);
       console.log("Data Posted on DB " + response);
+       setFormData({
+      name: "",
+      email: "",
+      password: "",
+    });
       
     } catch (error) {
       console.log(error)
@@ -22,8 +28,8 @@ const Index = () => {
 
   }
 
-  const handleChange = () => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
