@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
 
-const index = () => {
+const Index = () => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -60,4 +60,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
